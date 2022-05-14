@@ -1,22 +1,24 @@
 {% load static %}
 <html>
 <head>
-    <title>Django Girls blog</title>
+    <title>Gtihon9 first pet project</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Koulen&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source Sans Pro&subset=latin,cyrillic" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="page-header">
         {% if user.is_authenticated %}
             <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <p class="top-menu"><small>Hello {{ user.username }} </small></p>
+            <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
         {% else %}
-            <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>"
+            <a href="{% url 'login' %}" class="top-menu">Login</a>
+            <a href="{% url 'register' %}" class="top-menu">Register</a>
         {% endif %}
-        <h1><a href="/">Django Girls Blog</a></h1>
+        <h1><a href="/">Gtihon9 first pet project</a></h1>
     </div>
     <div class="content container">
         <div class="row">
